@@ -6,7 +6,7 @@ An AI-driven sandbox environment featuring flawlessly rendered objects in 3D spa
 
 ## 📌 Phase 1 – Setup Basics
 
-- Set up project with **React + Vite/Next.js** (or vanilla if preferred).  
+- Set up project with **React + Next.js**.  
 - Install `three`, `@react-three/fiber`, `@react-three/drei` for 3D rendering.  
 - Render a **single cube (voxel)** on screen as a placeholder object.  
 - Add **OrbitControls** so you can rotate and move the camera.  
