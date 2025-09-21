@@ -72,7 +72,7 @@ An AI-driven sandbox environment featuring flawlessly rendered objects in 3D spa
 6. UI polish + deployment  
 
 
-## 🔧 Recommended Stack
+## 🔧 Tech Stack
 
 - **Rendering:** Three.js / react-three-fiber  
 - **3D Objects:** Voxels stored as JSON arrays  
