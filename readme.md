@@ -4,12 +4,6 @@
 An AI-driven sandbox environment featuring flawlessly rendered objects in 3D space. 
 
 
-
-# Voxel 3D Sandbox Project
-
-This project is a 3D sandbox where every object is made of voxels (3D pixels). Users can manipulate objects with a sidebar chatbot to change shape, color, size, and even spawn multiple objects dynamically.
-
-
 ## 📌 Phase 1 – Setup Basics
 
 - Set up project with **React + Vite/Next.js** (or vanilla if preferred).  
