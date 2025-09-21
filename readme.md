@@ -5,100 +5,87 @@ An AI-driven sandbox environment featuring flawlessly rendered objects in 3D spa
 
 
 
-## 📌 Phase 1 – Setup Basics 1
+# Voxel 3D Sandbox Project
 
-- Set up project with React + Vite/Next.js (or vanilla if you prefer).
-
-- Install three, @react-three/fiber, @react-three/drei for 3D rendering.
-
-- Render a simple 3D sphere on screen (placeholder object).
-
-- Add OrbitControls so you can move around with the mouse.
-
-- #### ✅ Goal: See a basic 3D object in your browser.
+This project is a 3D sandbox where every object is made of voxels (3D pixels). Users can manipulate objects with a sidebar chatbot to change shape, color, size, and even spawn multiple objects dynamically.
 
 
-## 📌 Phase 2 – Multiple Objects
+## 📌 Phase 1 – Setup Basics
 
-- Learn to load .glb / .gltf models using useGLTF or GLTFLoader.
+- Set up project with **React + Vite/Next.js** (or vanilla if preferred).  
+- Install `three`, `@react-three/fiber`, `@react-three/drei` for 3D rendering.  
+- Render a **single cube (voxel)** on screen as a placeholder object.  
+- Add **OrbitControls** so you can rotate and move the camera.  
 
-- Store a few test models (car.glb, basketball.glb, chair.glb).
-
-- Create a function to swap objects in the scene.
-
-- Add buttons like “Load Car,” “Load Ball” to test.
-
-- #### ✅ Goal: Be able to switch between objects manually.
+**✅ Goal:** See a basic voxel in your browser.  
 
 
-## 📌 Phase 3 – Object Properties
+## 📌 Phase 2 – Voxel Object Rendering
 
-- Add ability to change object color.
+- Create a **VoxelObject component** that takes an array of voxels (`x, y, z, color`).  
+- Render **simple voxel objects**, e.g., a small cube or a basic voxel “ball.”  
+- Test **changing voxel colors** individually.  
+- Experiment with **scaling and rotating** the voxel object.  
 
-- Add ability to scale (make bigger/smaller).
+**✅ Goal:** Any object can be represented as a collection of voxels.  
 
-- Add ability to rotate or animate objects.
+## 📌 Phase 3 – Object Management
 
-- #### ✅ Goal: Modify the object interactively.
+- Store multiple voxel objects (ball, car, tree, etc.) as **JSON or arrays**.  
+- Implement **object swapping** by replacing voxel arrays.  
+- Add ability to **scale**, **rotate**, and **recolor** voxel objects.  
 
+**✅ Goal:** Dynamic voxel objects that can be swapped and modified.  
 
 ## 📌 Phase 4 – Chatbot Integration
 
-- Add a sidebar with a chat input + display.
+- Add a **sidebar with chat input + display**.  
+- Connect to **OpenAI API** (or preferred NLP).  
+- Parse commands such as:  
+  - `"turn into car"` → load car voxel array  
+  - `"make it blue"` → recolor voxels  
+  - `"make it bigger"` → scale voxel object  
 
-- Connect to OpenAI API (or your preferred NLP).
+**✅ Goal:** Control the voxel scene via text instead of buttons.  
 
-- Parse commands like:
+## 📌 Phase 5 – Advanced Features
 
-- "turn into car" → setModel("/models/car.glb")
+- Support **combined commands**:  
+  - `"turn into a car and make it red"` → multiple actions.  
+- Add **animations** (spin, bounce).  
+- Allow **multiple voxel objects** in the scene.  
+- (Optional) Add **physics** (gravity, collisions) using Rapier.js or cannon-es.  
 
-- "make it blue" → setColor("blue")
-
-- "make it bigger" → setScale(2)
-
-- #### ✅ Goal: Control the 3D scene via text instead of buttons
-
-
-## 📌 Phase 5 – Advanced Commands
-
-- Support combined commands:
-- "turn into a car and make it red" → two actions.
-
-- Add animations (e.g., spin, bounce).
-
-- Add multiple objects (spawn more than one).
-
-- Add basic physics (falling, collisions).
-
-- #### ✅ Goal: More natural sandbox interaction.
-
+**✅ Goal:** Fully interactive voxel sandbox.  
 
 ## 📌 Phase 6 – Polish
 
-- Build a clean UI layout (Canvas + Chat sidebar).
+- Build a **clean UI layout** (Canvas + Chat sidebar).  
+- Add **loading indicators** for large voxel objects.  
+- Optimize performance: **use InstancedMesh** for many voxels.  
+- (Optional) Deploy to **Vercel / Netlify** for online access.  
 
-- Add loading indicators for models.
+**✅ Goal:** A polished, shareable voxel sandbox app.  
 
-- Optimize performance (limit poly count, lazy load models).
-
-- (Optional) Deploy to Vercel/Netlify so people can play with it online.
-
-- #### ✅ Goal: A polished, shareable sandbox app.
 
 ## 🗂️ Project Roadmap Summary
 
-- Setup basics (React + Three.js)
+1. Setup basics (React + Three.js)  
+2. Render and manage voxel objects  
+3. Modify voxel object properties (color, scale, rotation, animation)  
+4. Chatbot integration (basic commands)  
+5. Advanced features (combined commands, multiple objects, animations, optional physics)  
+6. UI polish + deployment  
 
-- Load and swap models
 
-- Modify object properties (color, scale, animation)
+## 🔧 Recommended Stack
 
-- Chatbot integration (basic commands)
-
-- Advanced chatbot features (combined commands, multiple objects)
-
-- UI polish + deployment
-
+- **Rendering:** Three.js / react-three-fiber  
+- **3D Objects:** Voxels stored as JSON arrays  
+- **Chatbot:** OpenAI API for natural language commands  
+- **Frontend Framework:** React / Next.js  
+- **Performance:** InstancedMesh for large voxel objects  
+- **Optional Physics:** Rapier.js or cannon-es
 
 
 ## Authors
