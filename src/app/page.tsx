@@ -1,4 +1,4 @@
-import VoxelScene from "../components/VoxelScene";
+import VoxelScene from "../components/voxels-galaxy/VoxelScene";
 
 export default function Home() {
   return (
