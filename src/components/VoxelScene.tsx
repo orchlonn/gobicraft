@@ -1,8 +1,8 @@
 "use client";
 
-import { Canvas } from "@react-three/fiber";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import { useRef, useMemo } from "react";
+import { useRef, useMemo, useEffect } from "react";
 import * as THREE from "three";
 
 function Starfield() {
@@ -55,7 +55,7 @@ function Starfield() {
   const dummy = useMemo(() => new THREE.Object3D(), []);
 
   // Apply transformations to instances
-  useMemo(() => {
+  useEffect(() => {
     if (!meshRef.current) return;
 
     for (let i = 0; i < positions.length / 3; i++) {
@@ -101,10 +101,11 @@ function Starfield() {
 
 function Galaxy() {
   const meshRef = useRef<THREE.InstancedMesh>(null);
+  const groupRef = useRef<THREE.Group>(null);
 
   // Generate galaxy data
   const { positions, colors, scales } = useMemo(() => {
-    const count = 800; // Number of cubes
+    const count = 1000; // Number of cubes
     const positions = [];
     const colors = [];
     const scales = [];
@@ -160,7 +161,7 @@ function Galaxy() {
   const dummy = useMemo(() => new THREE.Object3D(), []);
 
   // Apply transformations to instances
-  useMemo(() => {
+  useEffect(() => {
     if (!meshRef.current) return;
 
     for (let i = 0; i < positions.length / 3; i++) {
@@ -197,14 +198,23 @@ function Galaxy() {
     }
   }, [positions, colors, scales, dummy]);
 
+  // Add subtle rotation animation
+  useFrame((state, delta) => {
+    if (groupRef.current) {
+      groupRef.current.rotation.y += delta * 0.1;
+    }
+  });
+
   return (
-    <instancedMesh
-      ref={meshRef}
-      args={[undefined, undefined, positions.length / 3]}
-    >
-      <boxGeometry args={[0.5, 0.5, 0.5]} />
-      <meshStandardMaterial />
-    </instancedMesh>
+    <group ref={groupRef}>
+      <instancedMesh
+        ref={meshRef}
+        args={[undefined, undefined, positions.length / 3]}
+      >
+        <boxGeometry args={[0.5, 0.5, 0.5]} />
+        <meshStandardMaterial />
+      </instancedMesh>
+    </group>
   );
 }
 
