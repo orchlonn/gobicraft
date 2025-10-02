@@ -14,67 +14,75 @@ export interface VoxelObjectDefinition {
   defaultColor?: string;
 }
 
-// Ultra-Dense Car object - 1000+ voxels
+// Optimized-Density Car object - ~5,000 voxels
 const carVoxels: VoxelData[] = combineVoxels(
-  // Main car body (much larger, completely filled)
-  fillBox(-8, 8, 0, 4, -3, 3, "#ff4444"),
+  // Main car body (optimized size)
+  fillBox(-12, 12, 0, 6, -5, 5, "#ff4444"),
 
-  // Cabin/roof (larger, elevated)
-  fillBox(-6, 6, 4, 7, -2, 2, "#ff6666"),
+  // Cabin/roof (elevated)
+  fillBox(-10, 10, 6, 10, -4, 4, "#ff6666"),
 
-  // Wheels (much larger solid cylinders)
-  fillCylinder(-6, -4, -2, 1, 2, "#222222"),
-  fillCylinder(-6, 4, -2, 1, 2, "#222222"),
-  fillCylinder(6, -4, -2, 1, 2, "#222222"),
-  fillCylinder(6, 4, -2, 1, 2, "#222222"),
+  // Wheels (solid cylinders)
+  fillCylinder(-10, -6, -2, 1, 3, "#222222"),
+  fillCylinder(-10, 6, -2, 1, 3, "#222222"),
+  fillCylinder(10, -6, -2, 1, 3, "#222222"),
+  fillCylinder(10, 6, -2, 1, 3, "#222222"),
 
-  // Engine block (much larger)
-  fillBox(-10, -8, 0, 3, -2, 2, "#666666"),
+  // Engine block
+  fillBox(-16, -12, 0, 4, -3, 3, "#666666"),
 
-  // Headlights (larger)
-  fillSphere(-10, 2, -2, 1, "#ffff88"),
-  fillSphere(-10, 2, 2, 1, "#ffff88"),
+  // Headlights
+  fillSphere(-16, 3, -3, 1, "#ffff88"),
+  fillSphere(-16, 3, 3, 1, "#ffff88"),
 
-  // Taillights (larger)
-  fillSphere(10, 2, -2, 1, "#ff0000"),
-  fillSphere(10, 2, 2, 1, "#ff0000"),
+  // Taillights
+  fillSphere(16, 3, -3, 1, "#ff0000"),
+  fillSphere(16, 3, 3, 1, "#ff0000"),
 
-  // Windows (larger, blue tinted)
-  fillBox(-5, 5, 7, 7, -2, 2, "#4444ff"),
+  // Windows
+  fillBox(-8, 8, 10, 10, -3, 3, "#4444ff"),
 
-  // Bumpers (front and rear)
-  fillBox(-9, -8, 0, 1, -3, 3, "#333333"),
-  fillBox(8, 9, 0, 1, -3, 3, "#333333"),
+  // Bumpers
+  fillBox(-15, -12, 0, 1, -5, 5, "#333333"),
+  fillBox(12, 15, 0, 1, -5, 5, "#333333"),
 
-  // Side panels (additional density)
-  fillBox(-7, 7, 1, 3, -3, -3, "#cc3333"),
-  fillBox(-7, 7, 1, 3, 3, 3, "#cc3333")
+  // Side panels
+  fillBox(-11, 11, 1, 5, -5, -5, "#cc3333"),
+  fillBox(-11, 11, 1, 5, 5, 5, "#cc3333"),
+
+  // Interior details
+  fillBox(-10, 10, 1, 5, -3, 3, "#8B4513"),
+
+  // Undercarriage
+  fillBox(-11, 11, -1, 0, -4, 4, "#404040")
 );
 
-// Ultra-Dense cube object - 1000+ voxels
-const cubeVoxels: VoxelData[] = fillBox(-5, 5, 0, 10, -5, 5, "#4444ff");
+// Optimized-Density cube object - ~5,000 voxels
+const cubeVoxels: VoxelData[] = fillBox(-8, 8, 0, 16, -8, 8, "#4444ff");
 
-// Ultra-Dense Tree object - 1000+ voxels
+// Optimized-Density Tree object - ~5,000 voxels
 const treeVoxels: VoxelData[] = combineVoxels(
-  // Much larger solid trunk (cylinder)
-  fillCylinder(0, 0, 0, 8, 3, "#8B4513"),
+  // Solid trunk (optimized cylinder)
+  fillCylinder(0, 0, 0, 12, 4, "#8B4513"),
 
-  // Massive solid leaf canopy (large sphere)
-  fillSphere(0, 12, 0, 7, "#228B22"),
+  // Large solid leaf canopy (main sphere)
+  fillSphere(0, 18, 0, 10, "#228B22"),
 
-  // Multiple large leaf clusters for maximum density
-  fillSphere(-4, 10, -4, 4, "#32CD32"),
-  fillSphere(4, 10, 4, 4, "#32CD32"),
-  fillSphere(-4, 14, 4, 4, "#228B22"),
-  fillSphere(4, 14, -4, 4, "#228B22"),
-  fillSphere(0, 16, 0, 3, "#228B22"),
+  // Multiple leaf clusters for density
+  fillSphere(-5, 15, -5, 5, "#32CD32"),
+  fillSphere(5, 15, 5, 5, "#32CD32"),
+  fillSphere(-5, 21, 5, 5, "#228B22"),
+  fillSphere(5, 21, -5, 5, "#228B22"),
+  fillSphere(0, 24, 0, 4, "#228B22"),
 
-  // Additional branch structures
-  fillCylinder(-3, -3, 6, 8, 1, "#8B4513"),
-  fillCylinder(3, 3, 6, 8, 1, "#8B4513"),
+  // Branch structures
+  fillCylinder(-4, -4, 8, 12, 1, "#8B4513"),
+  fillCylinder(4, 4, 8, 12, 1, "#8B4513"),
 
-  // Root system (underground)
-  fillSphere(0, -1, 0, 4, "#654321")
+  // Root system
+  fillSphere(0, -1, 0, 5, "#654321"),
+  fillSphere(-3, -1, -3, 2, "#654321"),
+  fillSphere(3, -1, 3, 2, "#654321")
 );
 
 // Ultra-Dense House object - 1000+ voxels
@@ -110,11 +118,11 @@ const houseVoxels: VoxelData[] = combineVoxels(
   fillCylinder(4, 4, 2, 8, 1, "#8B4513")
 );
 
-// Ultra-Dense Pyramid object - 1000+ voxels
+// Optimized-Density Pyramid object - ~5,000 voxels
 const pyramidVoxels: VoxelData[] = (() => {
   const voxels: VoxelData[] = [];
-  const height = 15;
-  const baseSize = 12;
+  const height = 20;
+  const baseSize = 18;
 
   for (let y = 0; y < height; y++) {
     const layerSize = baseSize - Math.floor((y * baseSize) / height);

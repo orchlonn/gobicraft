@@ -51,7 +51,7 @@ export default function DynamicVoxelScene({
         createTransitionAnimation(
           fromVoxels,
           toVoxels,
-          1500, // 1.5 seconds transition for better pixel detail appreciation
+          1800, // 1.8 seconds transition for optimal 5k voxel appreciation
           (transitionVoxels: TransitionVoxel[]) => {
             setDisplayVoxels(transitionVoxels);
           },
@@ -72,7 +72,7 @@ export default function DynamicVoxelScene({
     <div className="w-full h-screen bg-white">
       <Canvas
         camera={{
-          position: [25, 20, 25],
+          position: [35, 28, 35],
           fov: 75,
         }}
         gl={{ antialias: true }}
@@ -124,8 +124,8 @@ export default function DynamicVoxelScene({
           enablePan={true}
           enableZoom={true}
           enableRotate={true}
-          minDistance={10}
-          maxDistance={100}
+          minDistance={15}
+          maxDistance={120}
           autoRotate={true}
           autoRotateSpeed={0.8}
         />
