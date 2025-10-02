@@ -79,7 +79,6 @@ An AI-driven sandbox environment featuring flawlessly rendered objects in 3D spa
 ## Authors
 
 - [@orchlon](https://www.github.com/orchlonn)
-- [@munkhbayar](https://www.github.com/munkhbayar17)
 
 ## Support
 
