@@ -2,14 +2,7 @@
 
 import { useRef, useMemo, useEffect } from "react";
 import * as THREE from "three";
-import { TransitionVoxel } from "../../utils/voxelTransitions";
-
-export interface VoxelData {
-  x: number;
-  y: number;
-  z: number;
-  color: string;
-}
+import { TransitionVoxel, VoxelData } from "../../model/voxel.interface";
 
 interface VoxelObjectProps {
   voxels: VoxelData[] | TransitionVoxel[];

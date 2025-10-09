@@ -1,21 +1,6 @@
 import * as THREE from "three";
-import { VoxelData } from "../components/voxels-galaxy/VoxelObject";
-
-export interface TransitionVoxel extends VoxelData {
-  id: string;
-  targetX?: number;
-  targetY?: number;
-  targetZ?: number;
-  targetColor?: string;
-  opacity?: number;
-  scale?: number;
-}
-
-export interface TransitionState {
-  voxels: TransitionVoxel[];
-  progress: number; // 0 to 1
-  isTransitioning: boolean;
-}
+import { VoxelData } from "@/model/voxel.interface";
+import { TransitionVoxel } from "@/model/voxel.interface";
 
 // Create a unique ID for a voxel based on its position
 function createVoxelId(x: number, y: number, z: number): string {
