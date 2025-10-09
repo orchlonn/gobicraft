@@ -1,4 +1,4 @@
-import { VoxelData } from "../components/voxels-galaxy/VoxelObject";
+import { VoxelData } from "@/model/voxel.interface";
 
 // Utility functions to create solid, filled voxel objects
 
