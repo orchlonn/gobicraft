@@ -3,13 +3,11 @@
 import { useState, useRef, useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import VoxelObject, { VoxelData } from "./VoxelObject";
+import VoxelObject from "./VoxelObject";
+import { VoxelData, TransitionVoxel } from "@/model/voxel.interface";
 import Starfield from "./Starfield";
 import { VOXEL_OBJECTS, getVoxelObject } from "../../data/voxelObjects";
-import {
-  createTransitionAnimation,
-  TransitionVoxel,
-} from "../../utils/voxelTransitions";
+import { createTransitionAnimation } from "../../utils/voxelTransitions";
 
 interface DynamicVoxelSceneProps {
   currentObject?: string;
